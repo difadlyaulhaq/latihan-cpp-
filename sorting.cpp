@@ -70,6 +70,22 @@ int selection_sort() {
     return 0;
 }
 
+int insertion_sort() {
+    int temp, j;
+    for (int i = 1; i < n; i++) {
+        temp = data[i];
+        j = i - 1;
+        while (j >= 0 && data[j] > temp) {
+            data[j + 1] = data[j];
+            j--;
+        }
+        data[j + 1] = temp;
+        tampil();
+    }
+    cout << endl;
+    return 0;
+}
+
 int main() {
     cout << "ALGORITMA BUBBLE SORT" << endl;
     cout << "----------------------" << endl;
@@ -80,6 +96,9 @@ int main() {
     cout << "-------------------" << endl;
     cout << "Proses selection sort" << endl;
     selection_sort();
+    cout << "---------------------" << endl;
+    cout << "Proses insertion sort" << endl;
+    insertion_sort();
     getch();
     return 0;
 }
